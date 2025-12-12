@@ -16,12 +16,45 @@ body {
     background-color: #742628;
 }
 
-img {
+img,
+video {
     max-inline-size: 100%;
+    border-radius: 15px;
+    border: var(--imgBorder);
 }
 
 label {
     color: #fff;
+}
+
+.buttons {
+    text-decoration: none;
+    color: #000;
+    font-size: 1.75em;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid #fff;
+    border-radius: 10px;
+    background-color: #fff;
+    padding: 2px;
+    width: 80%;
+    max-width: 250px;
+    box-sizing: border-box;
+    margin-block: 20px;
+    margin-inline: auto;
+}
+
+.bookingInfo {
+    border: var(--border);
+    inline-size: 100%;
+    block-size: auto;
+    background-color: #742650;
+    color: var(--textColor);
+    font-size: 1.5em;
+    display: flex;
+    flex-direction: column;
 }
 
 @media screen and (min-width: 768px) {
@@ -55,24 +88,6 @@ label {
             border: var(--imgBorder);
         }
 
-        a {
-            text-decoration: none;
-            color: #000;
-            font-size: 1.75em;
-            font-weight: bold;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            border: 2px solid #fff;
-            border-radius: 10px;
-            background-color: #fff;
-            padding: 2px;
-            width: 80%;
-            max-width: 250px;
-            box-sizing: border-box;
-            margin-block: 20px;
-            margin-inline: auto;
-        }
     }
 
     .mission {
@@ -80,7 +95,6 @@ label {
         inline-size: 100%;
         block-size: auto;
         background-color: #742650;
-        /* margin: 20px 0 20px 0; */
         color: var(--textColor);
         text-align: center;
         padding-block: 20px;
@@ -93,9 +107,9 @@ label {
         inline-size: 100%;
         block-size: auto;
         background-color: #742650;
-        /* margin: 20px 0 20px 0; */
         color: var(--textColor);
         text-align: center;
+        /* flex-wrap: wrap; */
 
         img {
             height: auto;
@@ -111,23 +125,30 @@ label {
             flex-direction: column;
         }
 
-        a {
+        .buttonContainer {
+            display: flex;
+            margin-inline: auto;
+        }
+
+        .buttons {
             text-decoration: none;
             color: #000;
             font-size: 1.75em;
             font-weight: bold;
-            display: flex;
+            /* display: flex; */
             justify-content: center;
             align-items: center;
             border: 2px solid #fff;
             border-radius: 10px;
             background-color: #fff;
             padding: 0 5px;
-            width: 50%;
+            width: calc(50% - 24px);
             max-width: 250px;
             box-sizing: border-box;
             margin-block: 20px;
             margin-inline: 15px;
+            gap: 15px;
+            text-align: center;
         }
     }
 
@@ -149,7 +170,7 @@ label {
             li a {
                 text-decoration: none;
                 color: #000;
-                font-size: 1.75em;
+                font-size: 1.50em;
                 font-weight: bold;
                 display: flex;
                 justify-content: center;
@@ -157,7 +178,7 @@ label {
                 border: 2px solid #fff;
                 border-radius: 10px;
                 background-color: #fff;
-                padding: 2px;
+                padding: 5px;
                 width: 80%;
                 max-width: 250px;
                 box-sizing: border-box;
@@ -288,15 +309,118 @@ label {
 
     }
 
-    .bookingInfo {
+
+
+    .testimonials {
+
+        border: var(--border);
+        inline-size: 100%;
+        block-size: auto;
+        background-color: #742650;
+        margin-block-start: 5px;
+        color: var(--textColor);
+        font-size: 1.5em;
+        display: flex;
+        flex-direction: column;
+
+
+        img,
+        video {
+            height: 350px;
+            width: 350px;
+            margin: 15px;
+            border-radius: 15px;
+            border: var(--imgBorder);
+        }
+
+        h2 {
+            text-align: center;
+        }
+
+        .testimonialContent {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            border: var(--border);
+            border-block-start: 0;
+            border-inline: 0;
+        }
+
+        .text {
+            text-align: center;
+        }
+    }
+
+    #aboutUs {
         border: var(--border);
         inline-size: 100%;
         block-size: auto;
         background-color: #742650;
         color: var(--textColor);
+        text-align: center;
+        padding-block: 20px;
+        margin-block-start: 5px;
+
+        .music {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            border: var(--border);
+            border-block-end: 0;
+            border-inline: 0;
+            font-size: 1.75em;
+            gap: 25px;
+        }
+
+        .member {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            border: var(--border);
+            border-block-end: 0;
+            border-inline: 0;
+
+            .memberContent {
+                text-align: center;
+            }
+
+
+
+            img {
+                height: 350px;
+                width: 350px;
+                margin: 15px;
+                border-radius: 15px;
+                border: var(--imgBorder);
+            }
+        }
+    }
+
+    .equipement {
+        border: var(--border);
+        inline-size: 100%;
+        block-size: auto;
+        background-color: #742650;
+        margin-block-start: 5px;
+        color: var(--textColor);
         font-size: 1.5em;
         display: flex;
-        flex-direction: column;
+        flex-direction: row;
+        align-items: center;
+
+
+        img {
+            height: 350px;
+            width: 350px;
+            margin: 15px;
+            border-radius: 15px;
+            border: var(--imgBorder);
+        }
+
+        a {
+            color: var(--textColor);
+
+        }
     }
 }
 
@@ -344,7 +468,7 @@ label {
         li a {
             text-decoration: none;
             color: #000;
-            font-size: 4vi;
+            font-size: 3vi;
             font-weight: bold;
             border: 2px solid #fff;
             border-radius: 50px;
@@ -361,7 +485,8 @@ label {
         }
     }
 
-    .aboutUs {
+    .aboutUs,
+    #aboutUs {
         border: var(--border);
         inline-size: 100%;
         block-size: auto;
@@ -394,6 +519,7 @@ label {
         margin-top: 15px;
         color: var(--textColor);
         font-size: 1.5em;
+        align-items: center;
 
         a {
             text-decoration: none;
@@ -404,6 +530,17 @@ label {
 
         li {
             list-style: none;
+            text-align: center;
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        .container {
+            display: flex;
+            flex-direction: column;
+            margin-inline: auto;
             text-align: center;
         }
     }
@@ -420,6 +557,11 @@ label {
         img {
             object-fit: contain;
             padding: 15px;
+        }
+
+        .buttonContainer {
+            display: flex;
+            margin-inline: auto;
         }
 
         .buttons {
@@ -517,5 +659,48 @@ label {
     p::first-letter {
         font-size: 1.5em;
         font-style: italic;
+    }
+
+    .equipement {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        border: var(--border);
+        inline-size: 100%;
+        block-size: auto;
+        background-color: #742650;
+        margin-top: 15px;
+        color: var(--textColor);
+        font-size: 1.5em;
+
+        a {
+            color: var(--textColor);
+        }
+    }
+
+    .testimonials h2 {
+        color: var(--textColor);
+        text-align: center;
+        margin-block-start: 15px;
+    }
+
+    .testimonialContent {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        border: var(--border);
+        inline-size: 100%;
+        block-size: auto;
+        background-color: #742650;
+        margin-top: 15px;
+        color: var(--textColor);
+        font-size: 1.5em;
+        text-align: center;
+
+        video {
+            inline-size: 100%;
+            block-size: auto;
+            margin: 15px;
+        }
     }
 }
